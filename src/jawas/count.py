@@ -1,5 +1,5 @@
 import boto3
-from name import bucket_name
+from jawas.name import bucket_name
 
 
 def buckets_number_obj():
