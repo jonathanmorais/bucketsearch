@@ -4,7 +4,7 @@ import time
 import subprocess
 import os
 import logging
-from src.jawas.count import buckets_number_obj
+from jawas.count import buckets_number_obj
 
 logging.info('jawas working')
 
