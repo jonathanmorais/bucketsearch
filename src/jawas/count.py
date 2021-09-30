@@ -12,4 +12,4 @@ def buckets_number_obj():
         for i in s3.Bucket(bucket).objects.all():
             count_obj = count_obj + 1
 
-    print(bucket, count_obj)
+    return count_obj

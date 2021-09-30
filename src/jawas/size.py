@@ -1,22 +1,15 @@
 import boto3
-from name import bucket_name
+from jawas.name import bucket_name
 
 
-def buckets_number_size():
+def buckets_number_size(buckets):
     s3 = boto3.resource('s3')
-    buckets = bucket_name()
-    total_bytes = 0
-    n = 0
+    size = 0
+    sizes = []
 
     for bucket in buckets:
-        for bkct in s3.Bucket(bucket).objects.all():
+        for o in s3.Bucket(bucket).objects.all():
+            size += o.size
+        size = "{:.2f} MB".format(size/1024/1024)
 
-            total_bytes += bkct.size
-            n += 1
-            if n % 2000 == 0:
-                print(n)
-        total_gigs = total_bytes
-
-    print("%s: %i bytes, %i objects" % (buckets, total_gigs, n))
-
-    return total_gigs, n
+    return size
