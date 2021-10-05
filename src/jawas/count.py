@@ -2,14 +2,13 @@ import boto3
 from jawas.name import bucket_name
 
 
-def buckets_number_obj():
+def buckets_number_obj(buckets):
 
     s3 = boto3.resource('s3')
-    buckets = bucket_name()
-    count_obj = 0
+    bucket_obj = []
 
     for bucket in buckets:
-        for i in s3.Bucket(bucket).objects.all():
-            count_obj = count_obj + 1
+        count_obj = sum(1 for i in s3.Bucket(bucket).objects.all())
+        bucket_obj.append(count_obj)
 
-    return count_obj
+    return bucket_obj

@@ -1,16 +1,12 @@
 import boto3
 
 
-def bucket_name():
+def bucket_name(buckets):
 
     s3 = boto3.resource('s3')
     bckt = []
 
-    for bucket in s3.buckets.all():
-        bckt.append(bucket.name)
+    for bucket in buckets:
+        bckt.append(bucket)
 
-    return bckt
-
-
-if __name__ == "__main__":
-    bucket_name()
+    return print(bckt)

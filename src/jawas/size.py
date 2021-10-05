@@ -3,13 +3,12 @@ from jawas.name import bucket_name
 
 
 def buckets_number_size(buckets):
-    s3 = boto3.resource('s3')
-    size = 0
-    sizes = []
+    s3 = boto3.client('s3')
+    bckt_size = []
 
-    for bucket in buckets:
-        for o in s3.Bucket(bucket).objects.all():
-            size += o.size
-        size = "{:.2f} MB".format(size/1024/1024)
+    for i in buckets:
+        size = s3.list_objects_v2(
+            Bucket=i).get('Contents')[0]['Size']
+        bckt_size.append(size)
 
-    return size
+    return bckt_size

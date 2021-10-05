@@ -5,8 +5,7 @@ logging.info('jawas working')
 
 
 try:
-    bucket_summarize(['xerpa-connectors-staging', 'xerpay-fargate-cli',
-                     'severino-staging-serverlessdeploymentbucket-rvpfeg3vef4n'])
+    bucket_summarize([])
 
 except Exception as err:
     print(err)

@@ -6,12 +6,16 @@ from jawas.size import buckets_number_size
 
 
 def bucket_summarize(buckets):
-    for i in buckets:
-        dt_criacao = bucket_creation_date(buckets)
-    for k in buckets:
-        size = buckets_number_size(buckets)
+    dt_criacao = bucket_creation_date(buckets)
+    num_obj = buckets_number_obj(buckets)
+    size_obj = buckets_number_size(buckets)
+    res = dict()
 
-    res = "\n".join("{} {}".format(x, y)
-                    for x, y in zip(dt_criacao, str(size)))
-
+    for key in buckets:
+        for value in zip(dt_criacao, num_obj, size_obj):
+            res[key] = [value]
+            dt_criacao.remove(value[0])
+            num_obj.remove(value[1])
+            size_obj.remove(value[2])
+            break
     print(res)
