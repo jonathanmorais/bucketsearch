@@ -14,9 +14,6 @@ try:
         for key in buckets:
             for value in zip(dt_criacao, num_obj, size_obj):
                 res[key] = [value]
-                dt_criacao.remove(value[0])
-                num_obj.remove(value[1])
-                size_obj.remove(value[2])
                 break
         print(res)
 

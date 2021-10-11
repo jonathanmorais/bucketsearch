@@ -1,6 +1,4 @@
-from logging import error
 import boto3
-from s3ctl.name import bucket_name
 
 try:
     def buckets_number_obj(buckets):
