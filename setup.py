@@ -4,18 +4,18 @@ with open('requirements.txt') as f:
     requirements = f.readlines()
 
 setup(
-    name='jawas',
-    version='__version__',
+    name='s3ctl',
+    version='0.1.3',
     author='Jonathan Morais',
-    author_email='jonathan.m.lucena@gmail.com',
+    author_email='jonathan.lucena@zoom.com.br',
     license='MIT',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'jawas = jawas.src:main'
+            's3ctl = src.s3ctl:main'
         ]
     },
-    description='Jawas is using for get info about s3 buckets',
+    description='s3ctl is using for get info about s3 buckets',
     install_requires=requirements
 
 )
