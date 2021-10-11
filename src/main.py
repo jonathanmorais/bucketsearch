@@ -1,11 +1,16 @@
 import logging
+import click
+from jawas.cli import bucket_summarize
 from jawas.cli import bucket_summarize
 
-logging.info('jawas working')
-
+logging.info('s3ctl working')
 
 try:
-    bucket_summarize([])
+    @click.command()
+    @click.option('--bucket')
+    def output(bucket):
+        click.echo(bucket_summarize([bucket]))
 
-except Exception as err:
+    output()
+except click.ClickException as err:
     print(err)
