@@ -21,5 +21,4 @@ try:
         print(res)
 
 except TypeError:
-    print('aqui1')
     print('Error' + TypeError)
