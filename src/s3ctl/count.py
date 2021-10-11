@@ -1,6 +1,6 @@
 from logging import error
 import boto3
-from jawas.name import bucket_name
+from s3ctl.name import bucket_name
 
 try:
     def buckets_number_obj(buckets):
@@ -15,4 +15,3 @@ try:
         return bucket_obj
 except:
     print("error")
-

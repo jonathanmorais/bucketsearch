@@ -1,8 +1,8 @@
 import logging
-from jawas.count import buckets_number_obj
-from jawas.name import bucket_name
-from jawas.date import bucket_creation_date
-from jawas.size import buckets_number_size
+from s3ctl.count import buckets_number_obj
+from s3ctl.name import bucket_name
+from s3ctl.date import bucket_creation_date
+from s3ctl.size import buckets_number_size
 
 try:
     def bucket_summarize(buckets):
