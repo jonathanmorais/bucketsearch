@@ -1,21 +1,12 @@
-from setuptools import setup, find_packages
-
-with open('requirements.txt') as f:
-    requirements = f.readlines()
+from setuptools import setup
 
 setup(
     name='s3ctl',
-    version='0.1.3',
+    version='0.1.12',
     author='Jonathan Morais',
     author_email='jonathan.lucena@zoom.com.br',
     license='MIT',
-    packages=find_packages(),
-    entry_points={
-        'console_scripts': [
-            's3ctl = src.s3ctl:main'
-        ]
-    },
+    packages=['src'],
     description='s3ctl is using for get info about s3 buckets',
-    install_requires=requirements
-
+    install_requires=["boto3", "botocore", "click"]
 )
