@@ -1,7 +1,7 @@
 import boto3
 import botocore
 
-from s3ctl.name import bucket_name
+from name import bucket_name
 
 try:
     def bucket_creation_date(buckets):

@@ -1,8 +1,8 @@
 import logging
-from s3ctl.count import buckets_number_obj
-from s3ctl.name import bucket_name
-from s3ctl.date import bucket_creation_date
-from s3ctl.size import buckets_number_size
+from count import buckets_number_obj
+from name import bucket_name
+from date import bucket_creation_date
+from size import buckets_number_size
 
 try:
     def bucket_summarize(buckets):
@@ -12,9 +12,8 @@ try:
         res = dict()
 
         for key in buckets:
-            for value in zip(dt_criacao, num_obj, size_obj):
-                res[key] = [value]
-                break
+            for x, y, z in [(x, y, z) for x in dt_criacao for y in num_obj for z in size_obj]:
+                res[key] = [x, y, z]
         print(res)
 
 except TypeError:

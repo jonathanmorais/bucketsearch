@@ -1,7 +1,7 @@
 import logging
 import click
-from s3ctl.cli import bucket_summarize
-from s3ctl.cli import bucket_summarize
+from cli import bucket_summarize
+from cli import bucket_summarize
 
 logging.info('s3ctl working')
 

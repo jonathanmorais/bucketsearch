@@ -1,5 +1,5 @@
 import boto3
-from s3ctl.name import bucket_name
+from name import bucket_name
 
 
 def buckets_number_size(buckets):
