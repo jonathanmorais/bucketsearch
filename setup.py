@@ -1,12 +1,22 @@
-from setuptools import setup
+import setuptools
 
-setup(
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
     name='s3ctl',
     version='0.1.12',
     author='Jonathan Morais',
-    author_email='jonathan.lucena@zoom.com.br',
+    author_email='jonathan.m.lucena@gmail.com.br',
     license='MIT',
-    packages=['src'],
     description='s3ctl is using for get info about s3 buckets',
-    install_requires=["boto3", "botocore", "click"]
+    install_requires=["boto3", "botocore", "click"],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    package_dir={"": "src"},
+    packages=setuptools.find_packages(where="src"),
+    python_requires=">=3.6",
 )
