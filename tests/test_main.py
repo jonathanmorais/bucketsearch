@@ -22,6 +22,4 @@ class TestJsonResponse(unittest.TestCase):
         self.assertEqual(count_response, 3)    
 
 if __name__ == '__main__':
-    count = TestJsonResponse
-    count.count_array_response()
     unittest.main()
