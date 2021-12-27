@@ -10,7 +10,7 @@ setuptools.setup(
     author_email='jonathan.m.lucena@gmail.com.br',
     license='MIT',
     description='s3ctl is using for get info about s3 buckets',
-    install_requires=["boto3", "botocore", "click"],
+    install_requires=["boto3", "click"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
