@@ -1,18 +1,16 @@
 import boto3
-import botocore
 
-from name import bucket_name
+client = boto3.client('s3')
 
 try:
     def bucket_creation_date(buckets):
 
-        s3 = boto3.client('s3')
         dates = []
 
         for bucket in range(len(buckets)):
-            dates.append(s3.list_buckets()[
+            dates.append(client.list_buckets()[
                 "Buckets"][bucket]["CreationDate"].strftime('%Y-%m-%d-%H:%M:%S'))
 
         return dates
-except botocore.exceptions.ClientError as error:
+except client.exceptions.NoSuchEntityException as error:
     raise error

@@ -1,6 +1,5 @@
 import logging
 from count import buckets_number_obj
-from name import bucket_name
 from date import bucket_creation_date
 from size import buckets_number_size
 
