@@ -1,8 +1,8 @@
 on:
   push:
     tags:        
-      - 0
-      - 0.*
+      - v0
+      - v0.*
 jobs:
   build-push:
     runs-on: ubuntu-latest
