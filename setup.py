@@ -1,11 +1,12 @@
 import setuptools
+from version import get_git_version
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name='s3ctl',
-    version='0.1.12',
+    version=get_git_version(),
     author='Jonathan Morais',
     author_email='jonathan.m.lucena@gmail.com.br',
     license='MIT',
