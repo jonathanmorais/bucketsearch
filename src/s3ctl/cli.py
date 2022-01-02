@@ -1,19 +1,29 @@
 import logging
-from count import buckets_number_obj
-from date import bucket_creation_date
-from size import buckets_number_size
+import click
+from click.decorators import command
+from sum import bucket_summarize
+from sum import bucket_summarize
+
+logging.info('s3ctl working')
 
 try:
-    def bucket_summarize(buckets):
-        dt_criacao = bucket_creation_date(buckets)
-        num_obj = buckets_number_obj(buckets)
-        size_obj = buckets_number_size(buckets)
-        res = dict()
+    @click.command()
+    @click.option('--bucket', help='flag to recover bucket info.')
+    def help(name):
+        """Simple CLI that get buckets info."""
+        click.echo('Hello %s!' % name)
 
-        for key in buckets:
-            for x, y, z in [(x, y, z) for x in dt_criacao for y in num_obj for z in size_obj]:
-                res[key] = [x, y, z]
-        print(res)
+    def print_help_msg(command):
+        with click.Context(command) as ctx:
+            click.echo(command.get_help(ctx))
+    print_help_msg(help)        
 
-except TypeError:
-    print('Error' + TypeError)
+    @click.command()
+    @click.option('--bucket')
+    def bucket(bucket):
+        click.echo(bucket_summarize([bucket]))
+        exit()
+    bucket()    
+
+except click.ClickException as err:
+    print(err)
